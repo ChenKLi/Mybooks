@@ -1,0 +1,30 @@
+<h1>Create book</h1>
+
+<%= form_with(model:@book) do |form|%>
+  <div class="field">
+    <%= form.label :name, "書名"%>
+    <%= form.text_field :name %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :date, "出版日期"%>
+    <%= form.text_field :date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price, "售價"%>
+    <%= form.text_field :price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pages, "頁數"%>
+    <%= form.text_field :pages %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ISBN, "ISBN"%>
+    <%= form.text_field :ISBN %>
+  </div>
+
+    <%= form.submit%>
+<% end %>
