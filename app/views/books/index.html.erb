@@ -1,3 +1,18 @@
-<h1>Books List</h1>
 
-<%= link_to "Create book" , new_book_path%>
+<%=flash[:notice]%>
+<h1>Book List</h1>
+
+<%= link_to "Create Book", new_book_path%>
+
+<ul>
+
+  <% @books.each do |book| %>
+    <li>
+      <%= link_to book.name , book_path(book.id)%>
+      <%= link_to "edit",edit_book_path(book.id)%>
+      <%= button_to "delete", book_path(book.id), method: "delete" , data:{confirm: "are you sure?"}%>
+    </li>
+  <% end %>
+
+
+</ul>

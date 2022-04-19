@@ -1,0 +1,11 @@
+
+<% if @book %>
+    <h1>Book <%= @book.name%> Detail</h1>
+    <ul>
+        <li>書名:<%= @book.name%></li>
+        <li>出版日期:<%= @book.date%></li>
+        <li>價格:<%= @book.price%></li>
+        <li>頁數:<%= @book.pages%></li>
+        <li>ISBN:<%= @book.ISBN%></li>
+    </ul>
+<% end %>
