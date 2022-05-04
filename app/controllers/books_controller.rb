@@ -19,15 +19,15 @@ class BooksController < ActionController::Base
     end
     
     def show
-        @book = Book.find_by(id: params[:id])
+        @book = Book.friendly.find(params[:id])
     end
     
     def edit
-        @book = Book.find_by(id: params[:id])
+        @book = Book.friendly.find(params[:id])
     end
     
     def update
-        @book = Book.find_by(id: params[:id])
+        @book = Book.friendly.find(params[:id])
 
         if @book.update(book_params)
             flash[:notice]= "Update Sussess!!"
@@ -38,7 +38,7 @@ class BooksController < ActionController::Base
     end
     
     def destroy
-        @book = Book.find_by(id: params[:id])  
+        @book = Book.friendly.find(params[:id])
         @book.destroy      
 
         flash[:notice]= "Delete Sussess!!"
@@ -49,7 +49,6 @@ class BooksController < ActionController::Base
 
     def book_params
         params.require(:book).permit(:name,:date,:price,:pages,:ISBN)
-        
     end
     
     
