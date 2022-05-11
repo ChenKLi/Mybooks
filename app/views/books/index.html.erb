@@ -8,9 +8,13 @@
 
   <% @books.each do |book| %>
     <li>
-      <%= link_to book.name , book_path(book)%>
-      <%= link_to "edit",edit_book_path(book)%>
-      <%= button_to "delete", book_path(book), method: "delete" , data:{confirm: "are you sure?"}%>
+      <%= link_to book.name , book_path(book.slug)%>
+      |
+      <%= link_to "edit",edit_book_path(book.slug)%>
+      |
+      <%= link_to "delete", book_path(book.slug), method: "DELETE" , data:{confirm: "are you sure?"}%>
+      |
+      <%= link_to "buy",buy_book_path(book.slug), method:"POST"%>
     </li>
   <% end %>
 

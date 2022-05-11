@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  slug: MyString
+  book: one
+  price: 1
+  status: MyString
+
+two:
+  slug: MyString
+  book: two
+  price: 1
+  status: MyString

@@ -2,6 +2,7 @@ class Book < ApplicationRecord
 
     extend FriendlyId
     friendly_id :random_slug, use: :slugged
+    has_one :order
 
     validates :name , presence: true , uniqueness: true
     validates :date , presence: true
